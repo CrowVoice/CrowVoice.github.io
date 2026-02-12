@@ -80,7 +80,7 @@ site:
                 title: "Twilight"
                 # 副标题，支持单个字符串或字符串数组
                 subtitle:
-                    - "Illuminate Our Paths"
+                    - "奶黄包的博客"
                 # 副标题打字机效果
                 typewriter:
                     # 启用副标题打字机效果
