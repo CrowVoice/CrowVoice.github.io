@@ -1,3 +1,5 @@
+---
+
 title: STM32程序通过设置栈内存处理HardFault_Handler
 published: 2026-02-12
 pinned: false
@@ -9,6 +11,8 @@ author: 奶黄包-CrowVoice
 draft: false
 date: 2025-11-09
 pubDate: 2026-02-12
+
+---
 
 # STM32程序通过设置栈内存处理HardFault_Handler
 
