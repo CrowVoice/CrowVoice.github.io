@@ -5,7 +5,7 @@ published: 2026-02-12
 pinned: false
 description: 关于HardFault_Handler卡死的解决方法.
 tags: [Markdown, Blogging]
-category: Examples
+category: BUG
 licenseName: "Unlicensed"
 author: 奶黄包-CrowVoice
 draft: false

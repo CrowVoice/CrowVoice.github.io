@@ -5,7 +5,7 @@ published: 2026-02-12
 pinned: false
 description: DSP库移植教程.
 tags: [Markdown, Blogging]
-category: Examples
+category: Guides
 licenseName: "Unlicensed"
 author: 奶黄包-CrowVoice
 draft: false
