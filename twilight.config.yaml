@@ -5,7 +5,7 @@ site:
     # 站点标题
     title: "Twilight"
     # 站点副标题
-    subtitle: "Blog Template"
+    subtitle: "Blog of CrowVoice"
     # 语言配置
     lang: "en"
     # 翻译配置
@@ -248,9 +248,9 @@ sidebar:
 # 资料配置
 profile:
     # 头像配置 (相对于 /public 目录)
-    avatar: "/assets/images/avatar.jpg"
+    avatar: "/assets/images/avatar.png"
     # 信息配置
-    name: "Twilight"
+    name: "CrowVoice"
     # 简介配置
     bio: "Hi"
     # 链接配置
@@ -261,7 +261,7 @@ profile:
             # 图标
             icon: "fa6-brands:github"
             # 链接
-            url: "https://github.com/Spr-Aachen/Twilight"
+            url: "https://github.com/CrowVoice/CrowVoice.github.io"
 
 # 公告配置
 announcement:
