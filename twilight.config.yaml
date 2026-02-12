@@ -212,7 +212,7 @@ sidebar:
                 position: "top"
             - # 组件 - 文章类别 (预设)
                 # 类型
-                type: "categories"
+                type: "分类"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
                 position: "sticky"
                 # 响应式配置
