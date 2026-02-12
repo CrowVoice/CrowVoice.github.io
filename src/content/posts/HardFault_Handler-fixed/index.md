@@ -28,7 +28,7 @@ pubDate: 2026-02-12
 
 我们找到工程中startup_stm32h743xx.s（不同型号的名称不同，一般命名都是**startup_stm32（对应型号）xx.s**，例如STM32F407ZGT6就是startup_stm32f407xx.s，）。
 
-![image.png](image.png#pic_center)
+![image.png](image.png)
 
 打开文件后往下翻找到**Stack_Size**，可以看到栈的大小设置默认为0x0400。
 
@@ -36,7 +36,7 @@ pubDate: 2026-02-12
 
 当然也可以在文件页面左下角找到Configuration Wizaard并点开，就能直接找到了。
 
-![屏幕截图 2025-11-09 134027.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134027.png#pic_centepic_center)
+![屏幕截图 2025-11-09 134027.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134027.png#pic_center)
 
 ![屏幕截图 2025-11-09 134155.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134155.png)
 
