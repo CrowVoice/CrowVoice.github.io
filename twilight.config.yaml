@@ -212,7 +212,7 @@ sidebar:
                 position: "top"
             - # 组件 - 文章类别 (预设)
                 # 类型
-                type: "分类"
+                type: "categories"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
                 position: "sticky"
                 # 响应式配置
@@ -301,13 +301,13 @@ post:
     # 评论配置
     comment:
         # 启用评论功能
-        enable: false
+        enable: true
         # Twikoo 评论系统配置
         twikoo:
             # 环境 ID
             envId: "https://twikoo.vercel.app"
             # 语言
-            lang: "en"
+            lang: "cn"
 
 # 页脚配置
 footer:

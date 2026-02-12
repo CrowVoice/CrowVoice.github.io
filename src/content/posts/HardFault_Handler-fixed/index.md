@@ -4,7 +4,7 @@ title: STM32程序通过设置栈内存处理HardFault_Handler
 published: 2026-02-12
 pinned: false
 description: 关于HardFault_Handler卡死的解决方法.
-tags: [Markdown, Blogging]
+tags: [Markdown, Blogging,BUG]
 category: BUG
 licenseName: "Unlicensed"
 author: 奶黄包-CrowVoice
