@@ -20,7 +20,7 @@ pubDate: 2026-02-12
 
 # 示例代码
 
-![code.png](code.png#pic_center)
+![code.png](code.png)
 
 如图所示，这是我写的关于fft求幅值的函数，但是每次在运行到该函数时总是会进入HardFault_Handler函数卡死。于是我们可以从HardFault_Handler的运行原理入手，HardFault_Handler的卡死情况一般有很多种，其中**栈溢出**便是一种。
 
@@ -28,17 +28,17 @@ pubDate: 2026-02-12
 
 我们找到工程中startup_stm32h743xx.s（不同型号的名称不同，一般命名都是**startup_stm32（对应型号）xx.s**，例如STM32F407ZGT6就是startup_stm32f407xx.s，）。
 
-![image.png](image.png#pic_center)
+![image.png](image.png)
 
 打开文件后往下翻找到**Stack_Size**，可以看到栈的大小设置默认为0x0400。
 
-![屏幕截图 2025-11-09 133536.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_133536.png#pic_center)
+![屏幕截图 2025-11-09 133536.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_133536.png)
 
 当然也可以在文件页面左下角找到Configuration Wizaard并点开，就能直接找到了。
 
-![屏幕截图 2025-11-09 134027.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134027.png#pic_center)
+![屏幕截图 2025-11-09 134027.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134027.png)
 
-![屏幕截图 2025-11-09 134155.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134155.png#pic_center)
+![屏幕截图 2025-11-09 134155.png](%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-09_134155.png)
 
 栈的大小是按照16进制计算的0x0400即是1024bit，对应1KB大小。我们在此设置为0x3000之后，程序再次烧录便能正常运行了。
 
