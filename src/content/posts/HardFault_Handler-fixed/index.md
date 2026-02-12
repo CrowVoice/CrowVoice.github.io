@@ -28,7 +28,7 @@ pubDate: 2026-02-12
 
 我们找到工程中startup_stm32h743xx.s（不同型号的名称不同，一般命名都是**startup_stm32（对应型号）xx.s**，例如STM32F407ZGT6就是startup_stm32f407xx.s，）。
 
-![image.png](image.png)
+![image.png](image.png#pic_center)
 
 打开文件后往下翻找到**Stack_Size**，可以看到栈的大小设置默认为0x0400。
 
