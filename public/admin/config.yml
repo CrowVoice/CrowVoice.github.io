@@ -9,7 +9,7 @@ backend:
 
 
 # 设置后台系统语言 (zh_Hans 简体中文 | en 英文 | ...)
-locale: en
+locale: zh_Hans
 
 
 # 媒体目录配置
@@ -83,7 +83,7 @@ collections:
 
     - # 日记集合
         # 集合名称
-        name: "日记"
+        name: "diary"
         # 后台显示标签
         label: "Diary"
         # 内容存储目录
