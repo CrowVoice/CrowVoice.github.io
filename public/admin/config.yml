@@ -83,7 +83,7 @@ collections:
 
     - # 日记集合
         # 集合名称
-        name: "diary"
+        name: "日记"
         # 后台显示标签
         label: "Diary"
         # 内容存储目录
