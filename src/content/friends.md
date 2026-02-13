@@ -1,15 +1,15 @@
 ---
 
-## 如何加入
+## How to Apply
 
 请向我的个人邮箱发送申请: Crow_Voice@outlook.com
 
-邮件主题:
+Email Subject:
 ```
 关于个人网站好友列表的加入申请
 ```
 
-电子邮件内容（模板）:
+Email Content (Template):
 ```
 网站名称: [您的网站名称]
 网站描述: [您的网站描述]
