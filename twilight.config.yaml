@@ -7,7 +7,7 @@ site:
     # 站点副标题
     subtitle: "Blog of CrowVoice"
     # 语言配置
-    lang: "cn"
+    lang: "zh"
     # 翻译配置
     translate:
         # 启用翻译功能
