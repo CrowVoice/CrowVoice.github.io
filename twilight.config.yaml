@@ -1,7 +1,7 @@
 # 站点配置
 site:
     # 站点 URL（以斜杠结尾）
-    siteURL: "https://twilight.spr-aachen.com/"
+    siteURL: "https://crowvoice.github.io/"
     # 站点标题
     title: "Twilight"
     # 站点副标题
@@ -266,7 +266,7 @@ profile:
 # 公告配置
 announcement:
     # 公告标题
-    title: "Announcement"
+    title: "公告"
     # 公告内容
     content: "Welcome to my blog!"
     # 允许用户关闭公告
@@ -276,7 +276,7 @@ announcement:
         # 启用链接
         enable: true
         # 链接文本
-        text: "Learn More"
+        text: "了解更多"
         # 链接 URL
         url: "/about/"
         # 是否外部链接
@@ -307,7 +307,7 @@ post:
             # 环境 ID
             envId: "https://twikoo.vercel.app"
             # 语言
-            lang: "cn"
+            lang: "zh"
 
 # 页脚配置
 footer:
