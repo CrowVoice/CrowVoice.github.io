@@ -24,6 +24,7 @@ import "@styles/navbar.css";
 import "@styles/banner.css";
 import "@styles/fancybox.css";
 
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
     title?: string;
@@ -236,6 +237,8 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         {pioConfig.enable && <Pio client:idle />}
         <!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
         <div id="page-height-extend" class="hidden h-[300vh]"></div>
+        <!-- 网页分析 -->
+        <Analytics />
     </body>
 </html>
 
