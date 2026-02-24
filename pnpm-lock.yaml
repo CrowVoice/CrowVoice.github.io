@@ -71,6 +71,9 @@ importers:
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
+      '@vercel/analytics':
+        specifier: ^1.6.1
+        version: 1.6.1(svelte@5.49.1)
       astro:
         specifier: 5.16.15
         version: 5.16.15(@types/node@25.1.0)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@2.79.2)(sass@1.80.4)(stylus@0.64.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2)

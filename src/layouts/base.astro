@@ -221,7 +221,8 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         {umamiEnabled && umamiScripts && <Fragment set:html={umamiScripts} />}
         <!--Umami追踪码 -->>
         <!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="292df96e-38a9-4e9e-aff7-74b435dcdf16"></script> -->
-
+        <!-- Vercel Web Analytics -->
+        <Analytics />
     </head>
 
     <body class=" min-h-screen " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}
