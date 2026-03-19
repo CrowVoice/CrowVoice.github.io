@@ -283,6 +283,7 @@ import {
     BANNER_HEIGHT_HOME,
     BANNER_HEIGHT_EXTEND,
 } from "@/constants/constants";
+import { widgetManager, getComponentConfig } from "@utils/widget";
 import { pathsEqual, url } from "@utils/url";
 import { initWallpaperMode } from "@utils/wallpaper";
 import { initTheme } from "@utils/theme";
@@ -368,11 +369,29 @@ const setup = () => {
                 }
             }
         }
-        // increase the page height during page transition to prevent the scrolling animation from jumping
+        // Increase the page height during page transition to prevent the scrolling animation from jumping
         const heightExtend = document.getElementById('page-height-extend')
         if (heightExtend) {
             heightExtend.classList.remove('hidden')
         }
+        // Handle animation logic for persistent sidebar components: if the component is visible on both the current and next pages, it should remain stationary
+        const currentPath = window.location.pathname;
+        const nextPath = visit.to.url;
+        document.querySelectorAll('[data-swup-persist]').forEach(el => {
+            const id = el.id;
+            // Extract component type, e.g. "statistics-left" -> "statistics"
+            const type = id.split('-')[0];
+            const config = getComponentConfig(type as any);
+            if (config) {
+                const isVisibleNow = widgetManager.shouldShowComponent(config, currentPath);
+                const isVisibleNext = widgetManager.shouldShowComponent(config, nextPath);
+                if (isVisibleNow && isVisibleNext) {
+                    el.classList.add('pause-swup-transition');
+                } else {
+                    el.classList.remove('pause-swup-transition');
+                }
+            }
+        });
     });
     window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
         setTimeout(() => {
@@ -487,7 +506,7 @@ setupParticleEffects();
 
 // Remove is-loading class and trigger initial-animation after page load
 if (typeof window !== 'undefined') {
-    window.addEventListener('load', () => {
+    const onPageLoaded = () => {
         const overlay = document.getElementById('loading-overlay');
         const enableBanner = document.body.classList.contains('enable-banner');
         // 触发 LoadingOverlay 淡出
@@ -521,6 +540,23 @@ if (typeof window !== 'undefined') {
                 }, 1200);
             }
         }, 600);
-    });
+    };
+
+    const configCarrier = document.getElementById('config-carrier');
+    const waitForAllResources = configCarrier?.dataset.waitForAllResources === 'true';
+
+    if (waitForAllResources) {
+        if (document.readyState === 'complete') {
+            onPageLoaded();
+        } else {
+            window.addEventListener('load', onPageLoaded);
+        }
+    } else {
+        if (document.readyState !== 'loading') {
+            onPageLoaded();
+        } else {
+            document.addEventListener('DOMContentLoaded', onPageLoaded);
+        }
+    }
 }
 </script>

@@ -24,6 +24,8 @@ export type Favicon = {
 export type LoadingOverlayConfig = {
     // 是否启用加载页
     enable: boolean;
+    // 是否等待所有资源加载完成; 若设置为 false，则会在 DOM 解析完成后立即关闭加载页
+    waitForAllResources: boolean;
     // 加载标题配置
     title: {
         // 是否启用加载标题
@@ -258,6 +260,13 @@ export type WidgetComponentConfig = {
     position: "top" | "sticky"; // 顶部固定区域或粘性区域
     // 自定义内联样式
     style?: string;
+    // 页面可见性配置
+    visibility?: {
+        // 匹配模式：'include' (包含), 'exclude' (排除)
+        mode: "include" | "exclude";
+        // 页面路径匹配规则列表 (支持正则字符串)
+        paths: string[];
+    };
     // 响应式配置
     responsive?: {
         // 在指定设备上隐藏
@@ -265,8 +274,8 @@ export type WidgetComponentConfig = {
         // 折叠阈值
         collapseThreshold?: number;
     };
-    // 自定义属性
-    customProps?: Record<string, any>;
+    // 目录深度 (仅用于 toc 和 categories 组件)
+    depth?: number;
 };
 
 
@@ -455,6 +464,8 @@ export type MusicPlayerTrack = {
     cover: string;
     // 路径
     url: string;
+    // 歌词
+    lrc?: string;
     // 时长
     duration: number;
 };
