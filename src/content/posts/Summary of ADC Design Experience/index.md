@@ -1,7 +1,7 @@
 ---
 
 title: ADC设计经验总结
-published: 2026-3-18
+published: 2026-03-18
 pinned: false
 description: 关于我PCB设计生涯的ADC设计经验分享
 tags: [Markdown, Blogging,PCB]
@@ -9,8 +9,8 @@ category: PCB
 licenseName: "Unlicensed"
 author: 奶黄包-CrowVoice
 draft: false
-date: 2026-3-18
-pubDate: 2026-3-18
+date: 2026-03-18
+pubDate: 2026-03-18
 
 ---
 
