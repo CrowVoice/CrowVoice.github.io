@@ -102,7 +102,7 @@ ADC芯片一般能选择不同的输入信号峰峰值，建议将峰峰值选�
 
 详细请见ADI官方的AN-1142文件：
 
-[AN-1142_高速ADC PCB布局布线技巧.pdf](AN-1142_%E9%AB%98%E9%80%9FADC_PCB%E5%B8%83%E5%B1%80%E5%B8%83%E7%BA%BF%E6%8A%80%E5%B7%A7.pdf)
+[AN-1142_高速ADC PCB布局布线技巧](https://www.analog.com/cn/resources/app-notes/an-1142.html)
 
 ## 信号隔离
 
