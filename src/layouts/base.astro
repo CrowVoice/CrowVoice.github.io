@@ -23,6 +23,7 @@ import Pio from "@components/pio.svelte";
 import "@styles/navbar.css";
 import "@styles/banner.css";
 import "@styles/fancybox.css";
+import Analytics from '@vercel/analytics/astro';
 
 
 interface Props {
@@ -218,6 +219,8 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         <link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
         <!-- Umami Analytics -->
         {umamiEnabled && umamiScripts && <Fragment set:html={umamiScripts} />}
+        <!-- Vercel Analytics -->
+        <Analytics />
     </head>
 
     <body class=" min-h-screen " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}
