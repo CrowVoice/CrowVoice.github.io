@@ -1,8 +1,8 @@
 import Key from "@i18n/i18nKey";
-import type { Translation } from "@i18n/translation";
+import type { Translation } from "@i18n/language";
 
 
-export const zh: Translation = {
+export const zh_hans: Translation = {
     // 加载遮罩
     [Key.loading]: "加载中",
 
@@ -13,6 +13,7 @@ export const zh: Translation = {
     [Key.search]: "搜索",
 
     // 文章
+    [Key.directory]: "目录",
     [Key.tags]: "标签",
     [Key.categories]: "分类",
     [Key.series]: "系列",

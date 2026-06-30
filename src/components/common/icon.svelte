@@ -1,7 +1,8 @@
 <script lang="ts">
 /**
- * Svelte 图标组件 - 构建时内联 SVG
+ * Svelte 图标组件 - 构建时内联 SVG + API 回退
  */
+import { onMount } from "svelte";
 import { getIconSvg, hasIcon } from "@utils/icons";
 
 
@@ -39,6 +40,24 @@ const combinedClass = $derived(`${sizeClass} ${className}`.trim());
 // 获取内联 SVG
 const svgContent = $derived(getIconSvg(icon));
 const iconExists = $derived(hasIcon(icon));
+
+let remoteSvg = $state("");
+
+onMount(() => {
+    if (!iconExists) {
+        const [collection, name] = icon.split(":");
+        if (collection && name) {
+            fetch(`https://api.iconify.design/${collection}/${name}.svg?height=1em`)
+                .then(r => r.ok ? r.text() : Promise.reject())
+                .then(svg => { remoteSvg = svg; })
+                .catch(() => {
+                    if (window.__iconifyLoader) {
+                        window.__iconifyLoader.load().catch(() => {});
+                    }
+                });
+        }
+    }
+});
 </script>
 
 {#if iconExists && svgContent}
@@ -49,16 +68,21 @@ const iconExists = $derived(hasIcon(icon));
     >
         {@html svgContent}
     </span>
+{:else if remoteSvg}
+    <span
+        class="inline-icon inline-flex items-center justify-center {combinedClass}"
+        style={combinedStyle}
+        aria-hidden="true"
+    >
+        {@html remoteSvg}
+    </span>
 {:else}
     <span
         class="inline-icon inline-flex items-center justify-center {combinedClass}"
         style={combinedStyle}
         aria-hidden="true"
-        title="Icon not found: {icon}"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/>
-        </svg>
+        <iconify-icon icon={icon}></iconify-icon>
     </span>
 {/if}
 

@@ -149,16 +149,20 @@ site:
     # OpenGraph 配置
     generateOgImages: false
 
-# Umami统计配置
-umami:
-    # 是否显示Umami统计
-    enabled: true
-    # UmamiCloudAPI地址
-    baseUrl: "https://api.umami.is"
-    # API密钥 (可用环境变量覆盖)
-    apiKey: ""
-    # 要插入的Script (可用环境变量覆盖)
-    scripts: ""
+# 统计配置
+analytics:
+    # 是否启用统计
+    enabled: false
+    # 统计平台
+    platform: "umami"
+    # Umami 统计配置
+    umami:
+        # Umami API 地址
+        baseUrl: "https://api.umami.is"
+        # API 密钥
+        apiKey: ''
+        # Tracking code
+        code: ''
 
 # 导航栏配置
 navbar:
@@ -202,16 +206,11 @@ sidebar:
     components:
         # 左侧侧边栏
         left:
-            - # 组件 - 资料 (预设)
+            - # 组件 - 目录 (预设)
                 # 类型
-                type: "profile"
+                type: "directory"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
-                position: "top"
-            - # 组件 - 公告 (预设)
-                # 类型
-                type: "announcement"
-                # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
-                position: "top"
+                position: "sticky"
             - # 组件 - 文章类别 (预设)
                 # 类型
                 type: "categories"
@@ -234,6 +233,28 @@ sidebar:
                     collapseThreshold: 20
         # 右侧侧边栏
         right:
+            - # 组件 - 资料 (预设)
+                # 类型
+                type: "profile"
+                # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
+                position: "top"
+                # 页面可见性配置
+                visibility:
+                    # 匹配模式：'include' (包含), 'exclude' (排除)
+                    mode: "exclude"
+                    # 页面路径匹配规则列表 (支持正则字符串)
+                    paths: ["^/posts/", "^/archive"]
+            - # 组件 - 公告 (预设)
+                # 类型
+                type: "announcement"
+                # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
+                position: "top"
+                # 页面可见性配置
+                visibility:
+                    # 匹配模式：'include' (包含), 'exclude' (排除)
+                    mode: "exclude"
+                    # 页面路径匹配规则列表 (支持正则字符串)
+                    paths: ["^/posts/", "^/archive"]
             - # 组件 - 文章目录 (预设)
                 # 类型
                 type: "toc"
@@ -292,7 +313,19 @@ announcement:
 
 # 文章配置
 post:
-    # 显示“上次编辑”卡片
+    # 文章卡片配置
+    card:
+        # 封面
+        cover:
+            # 位置 ("left" | "right")
+            side: "left"
+            # 封面宽度
+            width: "33%"
+            # 封面上是否显示文字 (标题、标签、摘要)
+            showContent: true
+        # 标题大小 (Tailwind 文本大小类，例如 "text-3xl")
+        titleSize: "text-2xl"
+    # 显示"上次编辑"卡片
     showLastModified: true
     # 代码高亮配置
     expressiveCode:
@@ -374,7 +407,7 @@ musicPlayer:
     # meting 模式专属配置
     meting:
         # Meting API 地址
-        meting_api: "https://api.i-meto.com/meting/api"
+        meting_api: "https://meting.spr-aachen.com/api"
         # 音乐平台
         server: "netease"
         # 类型 ("playlist" 歌单 | "song" 单曲)

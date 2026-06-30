@@ -1,5 +1,5 @@
 import Key from "@i18n/i18nKey";
-import type { Translation } from "@i18n/translation";
+import type { Translation } from "@i18n/language";
 
 
 export const en: Translation = {
@@ -13,6 +13,7 @@ export const en: Translation = {
     [Key.search]: "Search",
 
     // Posts
+    [Key.directory]: "Directory",
     [Key.tags]: "Tags",
     [Key.categories]: "Categories",
     [Key.series]: "Series",

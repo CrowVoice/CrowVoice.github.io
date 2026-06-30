@@ -1,5 +1,5 @@
 import Key from "@i18n/i18nKey";
-import type { Translation } from "@i18n/translation";
+import type { Translation } from "@i18n/language";
 
 
 export const ja: Translation = {
@@ -13,6 +13,7 @@ export const ja: Translation = {
     [Key.search]: "検索",
 
     // 投稿
+    [Key.directory]: "ディレクトリ",
     [Key.tags]: "タグ",
     [Key.categories]: "カテゴリ",
     [Key.series]: "シリーズ",

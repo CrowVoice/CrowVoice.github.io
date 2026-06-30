@@ -1,29 +1,29 @@
 import { getResolvedSiteLang } from "@utils/language";
-import { en } from "./languages/en";
-import { ja } from "./languages/ja";
-import { zh } from "./languages/zh";
+import {
+    LANGUAGE_CONFIG,
+    LANGUAGE_REGION_MAP,
+    localTranslations,
+} from "@i18n/language";
 import type I18nKey from "./i18nKey";
+import type { Translation } from "@i18n/language";
 
-
-export type Translation = {
-    [K in I18nKey]: string;
-};
-
-const defaultTranslation = en;
-
-const map: { [key: string]: Translation } = {
-    en: en,
-    en_us: en,
-    en_gb: en,
-    en_au: en,
-    zh: zh,
-    zh_cn: zh,
-    ja: ja,
-    ja_jp: ja,
-};
+const defaultTranslation = localTranslations.en!;
 
 export function getTranslation(lang: string): Translation {
-    return map[lang.toLowerCase()] || defaultTranslation;
+    const code = lang.toLowerCase();
+    // LANGUAGE_CONFIG 中有该语言且有本地翻译
+    if (code in LANGUAGE_CONFIG && code in localTranslations) {
+        return localTranslations[code as SupportedLanguage]!;
+    }
+    // 匹配 region 变体（例如 zh_cn → zh_hans）
+    if (code in LANGUAGE_REGION_MAP) {
+        const baseCode = LANGUAGE_REGION_MAP[code];
+        if (baseCode in localTranslations) {
+            return localTranslations[baseCode]!;
+        }
+    }
+    // Fallback 到英文
+    return defaultTranslation;
 }
 
 export function i18n(key: I18nKey): string {
