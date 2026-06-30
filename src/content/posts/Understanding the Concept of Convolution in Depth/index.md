@@ -4,8 +4,8 @@ title: 深入浅出理解卷积的概念
 published: 2026-06-30
 pinned: false
 description: 对卷积的另一种理解方式
-tags: [Markdown, Blogging,Tech]
-category: Tech
+tags: [Markdown, Blogging,Guides]
+category: Guides
 licenseName: "Unlicensed"
 author: 奶黄包-CrowVoice
 draft: false
@@ -62,7 +62,7 @@ $$
 
 - $x[k]$ 是**固定不动的信号**（通常索引 k 从 0 开始）。
 - $h[k]$ 先被反转（变成 $h[−k]$），再平移 n，形成滑动窗口 $h[n−k]$。
-- 对应动画：红色反转核 ==[h[2], h[1], h[0]== 从左向右滑过蓝色数据。
+- 对应动画：红色反转核 `[h[2], h[1], h[0]]` 从左向右滑过蓝色数据。
 
 ![convolution_animation.gif](convolution_animation.gif)
 
@@ -80,7 +80,7 @@ $$
 
 - 固定核 $h[k]$（索引 k=0,1,2… 对应权重 $h[0]$,$h[1]$,$h[2]$）。
 - 反转后的数据为 $x[n−k]$：当 $k=0$ 时是当前输入 $x[n]$，$k=1$ 时为上一时刻输入 $x[n−1]$，以此类推。
-- 对应动画：蓝色反转数据 ==$[x[4], x[3], x[2], x[1], x[0]]$== 从左向右滑动，使 $x[n]$始终对准红色的 h[0]。
+- 对应动画：蓝色反转数据 `[x[4], x[3], x[2], x[1], x[0]]` 从左向右滑动，使 $x[n]$始终对准红色的 h[0]。
 
 ![convolution_animation_view2.gif](convolution_animation_view2.gif)
 
