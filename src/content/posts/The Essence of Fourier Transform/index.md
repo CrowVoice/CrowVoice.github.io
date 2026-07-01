@@ -1,3 +1,19 @@
+---
+
+title: 傅里叶变换的本质
+published: 2026-07-01
+pinned: false
+description: 图形化理解傅里叶变换.
+tags: [Markdown, Blogging,Guides]
+category: Guides
+licenseName: "Unlicensed"
+author: 奶黄包-CrowVoice
+draft: false
+date: 2026-07-01
+pubDate: 2026-07-01
+
+---
+
 # 前言
 
 傅里叶变换作为信号处理的基本功，在教科书上常以数学公式来对其进行解释，难免会产生较多的疑惑。实际上，傅里叶变换最好通过图形化的方式进行解释会更好理解，本文将以图形化的方式详细介绍傅里叶变换的实质。
