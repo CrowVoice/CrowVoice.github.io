@@ -85,7 +85,7 @@ importers:
         version: 4.0.9
       '@vercel/analytics':
         specifier: ^2.0.1
-        version: 2.0.1(svelte@5.53.6)
+        version: 2.0.1(svelte@5.55.5(@typescript-eslint/types@8.59.1))
       astro:
         specifier: 5.16.15
         version: 5.16.15(@netlify/blobs@10.7.4)(@types/node@25.6.0)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@2.80.0)(sass@1.80.4)(stylus@0.64.0)(terser@5.46.2)(typescript@5.9.3)(yaml@2.8.3)
@@ -9624,9 +9624,9 @@ snapshots:
     optionalDependencies:
       svelte: 5.55.5(@typescript-eslint/types@8.59.1)
 
-  '@vercel/analytics@2.0.1(svelte@5.53.6)':
+  '@vercel/analytics@2.0.1(svelte@5.55.5(@typescript-eslint/types@8.59.1))':
     optionalDependencies:
-      svelte: 5.53.6
+      svelte: 5.55.5(@typescript-eslint/types@8.59.1)
 
   '@vercel/functions@2.2.13':
     dependencies:
