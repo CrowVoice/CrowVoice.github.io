@@ -346,7 +346,7 @@ post:
         # Twikoo 评论系统配置
         twikoo:
             # 环境 ID
-            envId: "https://twikoo.vercel.app"
+            envId: "https://illustrious-sawine-114d2c.netlify.app/.netlify/functions/twikoo"
             # 语言
             lang: "zh"
 
