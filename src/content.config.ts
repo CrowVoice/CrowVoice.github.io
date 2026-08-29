@@ -24,7 +24,8 @@ const tagsSchema = z.preprocess((arg) => {
 const postsCollection = defineCollection({
     loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/posts" }),
     schema: z.object({
-        title: z.string(),
+        title: z.coerce.string(),
+        directoryTitle: z.coerce.string().optional().default("").transform(s => s.trim()),
         published: optionalDateSchema,
         updated: optionalDateSchema,
         description: z.string().optional().default(""),
@@ -45,6 +46,19 @@ const postsCollection = defineCollection({
         encrypted: z.boolean().optional().default(false),
         password: z.string().optional().default(""),
 
+        /* Copy protection fields */
+        copyProtection: z.object({
+            blockSelection: z.boolean().optional().default(false),
+            blockClipboard: z.boolean().optional().default(false),
+            blockContextMenu: z.boolean().optional().default(false),
+            blockDevTools: z.boolean().optional().default(false),
+        }).optional().default({
+            blockSelection: false,
+            blockClipboard: false,
+            blockContextMenu: false,
+            blockDevTools: false,
+        }),
+
         /* Custom routeName */
         routeName: z.string().optional(),
 
@@ -59,7 +73,7 @@ const postsCollection = defineCollection({
 const specCollection = defineCollection({
     loader: glob({ pattern: '[^_]*.{md,mdx}', base: "./src/content" }),
     schema: z.object({
-        title: z.string().optional(),
+        title: z.coerce.string().optional(),
         description: z.string().optional(),
     }),
 });
